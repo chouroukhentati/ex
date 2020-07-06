@@ -1,0 +1,54 @@
+ALGORITHM ex1s1
+VAR
+i,j : INTEGER;
+sum : INTEGER:=0;
+T1: ARRAY_OF INTEGER[];
+T2: ARRAY_OF INTEGER[];
+T3 : ARRAY_OF INTEGER:=[];
+cont : ARRAY_OF INTEGER:=[];
+BEGIN
+read(T1)
+read(T2)
+
+
+
+IF (T1.length<=T2.length) THEN
+
+   
+FOR i FROM 1 TO T1.length   DO
+    FOR j FROM 1 TO T2.length DO
+        IF (T1[i]=T2[j]) THEN
+            T3:=T3.concat(T1[i])
+        ELSE
+            T3:=T3
+            
+        END_IF
+    END_FOR
+END_FOR
+
+ELSE
+
+FOR i FROM 1 TO T2.length   DO
+    FOR j FROM 1 TO T1.length DO
+        IF (T2[i]=T1[j]) THEN
+            T3:=T3.concat(T2[i])
+        ELSE
+            T3:=T3
+            
+        END_IF
+
+    END_FOR
+END_FOR
+
+END_IF 
+
+write(T3)
+FOR i FROM 1 TO T3.length   DO
+    sum:=sum+T3[i]
+END_FOR
+write(sum)
+
+
+
+
+END
